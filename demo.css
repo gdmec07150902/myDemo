@@ -1,0 +1,52 @@
+.MoneyKeyBoard {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 35%;
+	background: #f6f6f8;
+}
+.MKB-item {
+}
+.MoneyKeyBoard table {
+	width: 100%;
+	height: 100%;
+}
+.MoneyKeyBoard tr {
+	border-bottom: 1px solid #cbcbcd;
+}
+.MoneyKeyBoard td {
+	width: 25%;
+	height: 25%;
+	text-align: center;
+	line-height: 25%;
+	font-size: 19px;
+	border-left: 1px solid #cbcbcd;
+	font-weight: 800;
+}
+.MoneyKeyBoard tr > td:first-child {
+	border-left: none;
+}
+#MKB-cancel {
+	background: #2b91e3;
+	color: #fff;
+	font-weight: 100;
+}
+@keyframes MKB-in
+{
+	from {
+		transform:translateY(100%);
+	}
+	to {
+		transform:translateY(0%);
+	}
+}
+@keyframes MKB-out
+{
+	from {
+		transform:translateY(0%);
+	}
+	to {
+		transform:translateY(100%);
+	}
+}

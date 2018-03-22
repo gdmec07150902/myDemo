@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"
+    />
+	<link rel="stylesheet" type="text/css" href="./api.css">
+	<link rel="stylesheet" type="text/css" href="./demo.css">
+    <script src="demo.js"></script>
+    <style type="text/css">
+    	input {
+    		border: 1px solid #000;
+    	}
+    </style>
+</head>
+<body>
+	<input id="inp" type="number" name="" readonly maxlength="10">
+	<!-- <div class="MoneyKeyBoard">
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td rowspan="2">删除</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td rowspan="2" id="MKB-cancel">确定</td>
+			</tr>
+			<tr>
+				<td>.</td>
+				<td>0</td>
+				<td>收</td>
+			</tr>
+		</table>
+	</div> -->
+	<script type="text/javascript">
+		new MKB({
+			id: "#inp"
+		})
+	</script>
+</body>
+</html>
