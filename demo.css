@@ -13,7 +13,8 @@
 	height: 100%;
 }
 .MoneyKeyBoard tr {
-	border-bottom: 1px solid #cbcbcd;
+	border-top: 1px solid #cbcbcd;
+	box-shadow: 0 1px 1px #fff;
 }
 .MoneyKeyBoard td {
 	width: 25%;
@@ -22,6 +23,7 @@
 	line-height: 25%;
 	font-size: 19px;
 	border-left: 1px solid #cbcbcd;
+	box-shadow: 0 1px 1px #fff;
 	font-weight: 800;
 }
 .MoneyKeyBoard tr > td:first-child {

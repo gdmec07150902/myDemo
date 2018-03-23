@@ -100,15 +100,16 @@
         var domArray = document.getElementsByClassName("MKB-NUM");
         var MKB_DEL = document.querySelector('#MKB-del');
         var MKB_CANCEL = document.querySelector('#MKB-cancel');
+        // 确认按钮
         MKB_CANCEL.onclick = function() {
             inp.blur();
         }
-        // 删一格
+        // 删减一位
         MKB_DEL.onclick = function() {
             that.data['isInput'] = true;
             inp.value = inp.value.slice(0,inp.value.length - 1);
         }
-
+        // 各个数字和点 按钮
         for (x in domArray)
         {
             console.log(domArray[x]);
@@ -118,11 +119,24 @@
                     if (inp.value.length >= 10) {
                         return;
                     }
-                    inp.value = inp.value + domArray[x].getAttribute('data-attr');
+                    inp.value = inp.value +''+ domArray[x].getAttribute('data-attr');
+
+                    /*   正则验证   */
+                    //先把非数字的都替换掉，除了数字和. 
+                    inp.value = inp.value.replace(/[^\d\.]/g,'');
+                    //必须保证第一个为数字而不是. 
+                    inp.value = inp.value.replace(/^\./g,'0.'); 
+                    //保证只有出现一个.而没有多个. 
+                    inp.value = inp.value.replace(/\.{2,}/g,'.'); 
+                    //保证.只出现一次，而不能出现两次以上 
+                    inp.value = inp.value.replace('.','$#$').replace(/\./g,'').replace('$#$','.');
+                     //只能输入两个小数
+                    inp.value = inp.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); 
+                    /*   正则验证   end   */
                 }
             })(x)
         }
-
     }
+
     return MKB;
 });
