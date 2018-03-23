@@ -20,7 +20,7 @@
     MKB.prototype.init = function(obj) {
         var inp = document.querySelector(obj.id);
         var that = this;
-        // 创建dom
+        // 渲染键盘
         this.createDom();
         console.log(inp)
         inp.addEventListener("focus", function() {
@@ -41,7 +41,7 @@
         this.change(obj);
     };
 
-    // 创建dom
+    // 渲染键盘
     MKB.prototype.createDom = function() {
         var oldDom = document.querySelector('.picker-modal-mask');
         if (oldDom) {
@@ -78,13 +78,14 @@
         document.body.appendChild(dom);
     };
 
+    // 打开键盘
     MKB.prototype.focus = function(obj){
         var inp = document.querySelector(obj.id);
         var dom = document.querySelector('.MoneyKeyBoard');
         dom.style.display = 'block';
         dom.style.animation = 'MKB-in .2s';
     }
-
+    // 收起键盘
     MKB.prototype.blur = function(obj){
         var inp = document.querySelector(obj.id);
         var dom = document.querySelector('.MoneyKeyBoard');
@@ -93,7 +94,7 @@
         },180)
         dom.style.animation = 'MKB-out .2s';
     }
-
+    // 添加事件
     MKB.prototype.change = function(obj) {
         var that = this;
         var inp = document.querySelector(obj.id);
